@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "enableAllProjectMcpServers": true,
+  "permissions": {
+    "allow": [
+      "mcp__playwright",
+      "Read",
+      "Write",
+      "Edit",
+      "Bash(open:*)",
+      "Bash(xdg-open:*)",
+      "Bash(start:*)",
+      "Bash(mkdir:*)",
+      "Bash(uname:*)",
+      "Bash(command -v:*)",
+      "Bash(node --version)",
+      "Bash(npm --version)",
+      "Bash(npx --version)",
+      "Bash(claude --version)",
+      "Bash(claude mcp list)",
+      "Bash(df:*)",
+      "Bash(node:*)",
+      "Bash(bash .claude/skills/youtube-niche-research/scripts/serve-report.sh:*)",
+      "Bash(python3 -m http.server:*)",
+      "Bash(lsof:*)",
+      "Bash(curl:*)",
+      "Bash(kill:*)",
+      "Bash(rm report-data.json)",
+      "Bash(rm reports/report-data.json)"
+    ]
+  }
+}

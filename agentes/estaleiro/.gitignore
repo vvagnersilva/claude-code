@@ -1,0 +1,5 @@
+# Configuração local do projeto (gerada no setup) — nunca versionar
+.estaleiro/
+
+# Sistema
+.DS_Store

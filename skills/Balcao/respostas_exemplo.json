@@ -1,0 +1,41 @@
+{
+  "negocio": "Otica Exemplo",
+  "tipo": "loja",
+  "canal": "WhatsApp",
+  "tom": "cordial, proximo e claro, com um emoji aqui e ali",
+  "assinatura": "Equipe Otica Exemplo",
+  "fora_horario": "Recebemos sua mensagem fora do horario de atendimento. Assim que abrirmos te respondo certinho! 🙌",
+  "horario": {
+    "seg": "09:00-18:00",
+    "ter": "09:00-18:00",
+    "qua": "09:00-18:00",
+    "qui": "09:00-18:00",
+    "sex": "09:00-18:00",
+    "sab": "09:00-13:00",
+    "dom": "fechado"
+  },
+  "endereco": "Rua das Flores, 123 - Centro. Estacionamento na rua, fica ao lado da praca.",
+  "servicos": [
+    {"nome": "Exame de vista", "preco": "gratis na compra dos oculos", "descricao": "feito na hora, leva ~20 min"},
+    {"nome": "Oculos de grau completo", "preco": "a partir de 250", "descricao": "armacao + lentes com receita"},
+    {"nome": "Troca de lente", "preco": "a partir de 150", "descricao": "mantem sua armacao"},
+    {"nome": "Conserto / ajuste", "preco": "30", "descricao": "solda, troca de plaqueta, aperto"}
+  ],
+  "pagamento": ["Pix", "Cartao de credito (ate 6x sem juros)", "Cartao de debito", "Dinheiro"],
+  "politicas": [
+    "Garantia de 1 ano contra defeito de fabricacao nas lentes e armacao.",
+    "Oculos de grau ficam prontos em 3 a 5 dias uteis.",
+    "Primeira regulagem (ajuste) e gratis a qualquer momento."
+  ],
+  "nao_fazemos": [
+    "Nao fazemos lentes de contato com grau (so oculos).",
+    "Nao atendemos convenio/plano de saude."
+  ],
+  "faq": [
+    {"pergunta": "Voces fazem exame de vista?", "resposta": "Fazemos sim! O exame e gratis na compra dos oculos e leva uns 20 minutos, feito na hora.", "categoria": "servico", "tags": "exame,vista,gratis"},
+    {"pergunta": "Quanto custa um oculos de grau?", "resposta": "Os oculos de grau completos saem a partir de R$ 250 (armacao + lentes com a sua receita). O valor final depende da armacao e do tipo de lente.", "categoria": "preco", "tags": "preco,grau,valor,oculos"},
+    {"pergunta": "Em quantos dias fica pronto?", "resposta": "Os oculos de grau ficam prontos em 3 a 5 dias uteis. Assim que chegam a gente te avisa!", "categoria": "posvenda", "tags": "prazo,pronto,dias,entrega"},
+    {"pergunta": "Quais as formas de pagamento?", "resposta": "Aceitamos Pix, cartao de credito em ate 6x sem juros, debito e dinheiro.", "categoria": "pagamento", "tags": "pagamento,pix,cartao,parcelar"},
+    {"pergunta": "Voces atendem convenio?", "resposta": "Convenio/plano a gente nao atende, mas temos otimas condicoes de pagamento e o exame e gratis na compra. :)", "categoria": "servico", "tags": "convenio,plano"}
+  ]
+}

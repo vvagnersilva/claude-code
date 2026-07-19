@@ -1,0 +1,90 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# EXAMPLE BRIEF — the flagship continuity build (deep-sea descent).
+# Mirrors PDF Prompt 02 (ABYSSAL). This single file is the "one prompt, unedited"
+# from the pack, restructured as data. Run:
+#   npm run build -- --brief briefs/example.brief.yaml
+# ─────────────────────────────────────────────────────────────────────────────
+
+brand: ABYSSAL
+niche: journey                 # → archetype "descent" (see prompt-pack/templates.js)
+tagline: How deep will you go?
+subtitle: A deep-sea expedition to the ocean floor aboard the EREBUS.
+
+# Optional design overrides (else taken from the niche template palette)
+vibe:
+  mood: cinematic, cold, awe
+  accent: "#39e0ff"            # bioluminescent cyan
+  background: "#060d18"        # deep navy → black with depth
+  text: "#dfeaf5"
+
+# The subject that descends with the camera (procedural placeholder for the
+# Seedance hero clip). One of: submarine | hypercar | faceted-solid | figure | tower
+subject: submarine
+
+# Fixed HUD that counts with scroll (PDF: "depth meter 0m → 3,800m")
+hud:
+  label: DEPTH
+  unit: m
+  from: 0
+  to: 3800
+
+# Sections become pinned, scroll-revealed zones. Each optional field falls back to
+# a sensible default from the template. `carry` documents the continuity handoff.
+sections:
+  - id: hero
+    zone: SURFACE
+    depth: 0
+    fog: "#3f7fbf"
+    kicker: THE SURFACE
+    title: How deep will you go?
+    body: Eight civilians a year. One submersible. The ocean floor.
+  - id: sunlit
+    zone: SUNLIT ZONE
+    depth: 200
+    fog: "#1f5f9e"
+    carry: final-frame→start-frame
+    kicker: 200 m
+    title: 99% of sunlight is already gone.
+    body: God rays fade. Bubble columns rise past the viewport.
+  - id: twilight
+    zone: TWILIGHT ZONE
+    depth: 1000
+    fog: "#0a2f55"
+    carry: final-frame→start-frame
+    kicker: 1,000 m
+    title: Pressure is 100× the surface.
+    body: Ghostly jellyfish drift. The floodlights flicker on.
+  - id: midnight
+    zone: MIDNIGHT ZONE
+    depth: 2500
+    fog: "#03101f"
+    carry: final-frame→start-frame
+    kicker: 2,500 m
+    title: No sun has ever reached this water.
+    body: Life makes its own light. The dark sparks around the hull.
+  - id: floor
+    zone: THE FLOOR
+    depth: 3800
+    fog: "#01060c"
+    carry: final-frame→start-frame
+    kicker: 3,800 m
+    title: Fewer have stood here than have walked on the moon.
+    body: Floodlights sweep the hydrothermal vents.
+
+# Spec callouts + CTA (PDF: "8 seats. $250,000. Departing March 2027.")
+specs:
+  - ["CREW", "2 pilots"]
+  - ["LIFE SUPPORT", "96 hours"]
+  - ["DEPTH RATING", "4,000 m"]
+  - ["SOULS ON BOARD", "8"]
+cta:
+  headline: 8 seats. $250,000. Departing March 2027.
+  button: Join the Manifest
+
+# Generation settings (used by the ASSETS stage; stubbed without a Higgsfield key)
+generation:
+  provider: higgsfield
+  model: seedance-2.0
+  mode: std
+  resolution: 1080p
+  chained: true                # final-frame → start-frame continuity

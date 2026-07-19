@@ -1,0 +1,26 @@
+{
+  "name": "cinematic-3d-scroll-website-builder",
+  "version": "1.0.0",
+  "description": "A worker that turns a brief into a finished cinematic website with real 3D animation and a scroll-driven continuity effect (Higgsfield / Fable 5 style).",
+  "type": "module",
+  "bin": {
+    "cine3d": "pipeline/run.js"
+  },
+  "scripts": {
+    "setup": "node setup.js",
+    "build": "node pipeline/run.js",
+    "verify": "node pipeline/lib/verify.js",
+    "higgsfield:login": "node pipeline/lib/higgsfield-session.js",
+    "serve": "node pipeline/lib/server.js",
+    "demo": "node pipeline/run.js --brief briefs/example.brief.yaml"
+  },
+  "dependencies": {
+    "js-yaml": "^4.1.0"
+  },
+  "devDependencies": {
+    "playwright": "^1.61.1"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

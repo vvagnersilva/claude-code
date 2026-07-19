@@ -1,0 +1,4 @@
+# Dados locais do usuario - nunca versionar
+.escuta/
+__pycache__/
+*.pyc

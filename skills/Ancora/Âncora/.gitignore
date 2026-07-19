@@ -1,0 +1,6 @@
+# Dados locais da carteira do dono — nunca versionar
+.ancora/
+# Lixo de sistema
+.DS_Store
+__pycache__/
+*.pyc

@@ -1,0 +1,8 @@
+node_modules/
+.DS_Store
+*.log
+# Secrets: credentials + saved browser sessions — never commit.
+.env
+.claude/auth/
+# Keep the demo output + QC screenshots committed as end-to-end proof.
+# (output/ and qc/ are intentionally NOT ignored.)

@@ -1,0 +1,4 @@
+# Dados locais do dono — nunca versionar nem compartilhar
+.aplauso/
+__pycache__/
+*.pyc

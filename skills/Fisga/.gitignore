@@ -1,0 +1,7 @@
+# Perfil e dados locais do usuário — nunca versionar
+.fisga/
+
+# Dossiês e listas de prospects que o usuário gerar
+prospects/
+dossies/
+*.dossie.md

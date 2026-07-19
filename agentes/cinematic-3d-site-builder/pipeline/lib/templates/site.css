@@ -1,0 +1,118 @@
+/* site.css — cinematic 3D-scroll shell. Colors come from CSS vars set per-brief. */
+:root {
+  --bg: #060d18;
+  --accent: #39e0ff;
+  --text: #dfeaf5;
+  --muted: rgba(223, 234, 245, 0.55);
+  --hairline: rgba(255, 255, 255, 0.12);
+  --serif: "Times New Roman", Georgia, serif;
+  --sans: "Helvetica Neue", Inter, Arial, sans-serif;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scrollbar-width: none; }
+html::-webkit-scrollbar { display: none; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  cursor: default;
+}
+
+/* fixed WebGL / canvas backdrop — effectively pinned so text scrolls over it */
+#scene {
+  position: fixed; inset: 0; width: 100vw; height: 100vh;
+  display: block; z-index: 0;
+}
+/* film grain + vignette for cinematic depth */
+.grain, .vignette { position: fixed; inset: 0; pointer-events: none; z-index: 1; }
+.vignette { box-shadow: inset 0 0 340px 60px rgba(0,0,0,0.85); }
+.grain {
+  opacity: 0.05; mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* content sits above the canvas */
+main { position: relative; z-index: 2; }
+.chapter {
+  min-height: 100vh; display: flex; align-items: center;
+  padding: 12vh 8vw; position: relative;
+}
+.chapter[data-align="center"] { justify-content: center; text-align: center; }
+.chapter[data-align="right"] { justify-content: flex-end; text-align: right; }
+.chapter-inner { max-width: 720px; will-change: transform, opacity; }
+
+.kicker {
+  font-size: 13px; letter-spacing: 0.42em; text-transform: uppercase;
+  color: var(--accent); margin-bottom: 22px; font-weight: 600;
+}
+.chapter h1 {
+  font-family: var(--serif); font-weight: 400; line-height: 0.98;
+  font-size: clamp(48px, 8.5vw, 132px); letter-spacing: -0.01em;
+}
+.chapter h2 {
+  font-family: var(--serif); font-weight: 400; line-height: 1.02;
+  font-size: clamp(34px, 5.2vw, 74px); letter-spacing: -0.01em; margin-bottom: 8px;
+}
+.chapter p.lead { margin-top: 26px; font-size: clamp(16px, 1.5vw, 21px); color: var(--muted); max-width: 46ch; line-height: 1.55; }
+.hero-sub { margin-top: 30px; font-size: 15px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); }
+
+/* spec strip */
+.specs { display: flex; flex-wrap: wrap; gap: 44px; margin-top: 40px; }
+.spec { border-top: 1px solid var(--hairline); padding-top: 12px; min-width: 120px; }
+.spec .k { font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--muted); }
+.spec .v { font-family: var(--serif); font-size: 30px; margin-top: 6px; }
+
+/* CTA */
+.cta { text-align: center; }
+.cta .btn {
+  display: inline-block; margin-top: 30px; padding: 16px 40px; border: 1px solid var(--accent);
+  color: var(--accent); text-decoration: none; letter-spacing: 0.22em; text-transform: uppercase; font-size: 13px;
+  transition: background 0.3s, color 0.3s;
+}
+.cta .btn:hover { background: var(--accent); color: #000; }
+
+/* fixed HUD (depth / speed / floor counter) */
+.hud {
+  position: fixed; top: 0; right: 0; height: 100vh; width: 92px; z-index: 3;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 14px; pointer-events: none;
+}
+.hud .rail { position: relative; width: 2px; height: 42vh; background: var(--hairline); overflow: hidden; }
+.hud .rail #hud-bar { position: absolute; inset: 0; transform-origin: top; background: var(--accent); transform: scaleY(0); }
+.hud .label { writing-mode: vertical-rl; font-size: 10px; letter-spacing: 0.4em; text-transform: uppercase; color: var(--muted); }
+.hud #hud-value { writing-mode: vertical-rl; font-family: var(--sans); font-size: 13px; letter-spacing: 0.14em; color: var(--accent); }
+
+/* top brand bar + scroll cue */
+.topbar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 4; display: flex; justify-content: space-between;
+  padding: 26px 34px; font-size: 12px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--muted);
+  mix-blend-mode: difference;
+}
+.scrollcue {
+  position: fixed; bottom: 26px; left: 50%; transform: translateX(-50%); z-index: 4;
+  font-size: 11px; letter-spacing: 0.4em; text-transform: uppercase; color: var(--muted);
+  animation: bob 2.4s ease-in-out infinite;
+}
+@keyframes bob { 0%,100% { transform: translate(-50%, 0); opacity: 0.5; } 50% { transform: translate(-50%, 8px); opacity: 1; } }
+
+/* menu / secondary content */
+.menu-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; margin-top: 40px; }
+.menu-cols .row { display: flex; justify-content: space-between; border-bottom: 1px solid var(--hairline); padding: 14px 0; }
+.menu-cols h3 { font-family: var(--serif); font-weight: 400; font-size: 26px; margin-bottom: 12px; color: var(--accent); }
+
+@media (max-width: 720px) {
+  .chapter { padding: 12vh 7vw; }
+  .menu-cols { grid-template-columns: 1fr; gap: 30px; }
+  .specs { gap: 24px; }
+  .hud { width: 60px; }
+}
+
+/* loading veil until the engine reports ready */
+#veil { position: fixed; inset: 0; z-index: 9; background: var(--bg); display: flex; align-items: center; justify-content: center; transition: opacity 0.8s; }
+#veil.gone { opacity: 0; pointer-events: none; }
+#veil .mark { font-family: var(--serif); font-size: 40px; letter-spacing: 0.1em; }
+#veil .bar { position: absolute; bottom: 20%; width: 160px; height: 1px; background: var(--hairline); overflow: hidden; }
+#veil .bar i { position: absolute; inset: 0; width: 40%; background: var(--accent); animation: slide 1.1s ease-in-out infinite; }
+@keyframes slide { 0% { left: -40%; } 100% { left: 100%; } }

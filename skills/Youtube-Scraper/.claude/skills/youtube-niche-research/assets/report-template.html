@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<!--
+  YouTube Niche Research report template.
+  HOW TO USE (for the agent):
+    Inside the <script> tag below there is a DATA object wrapped by the markers
+    DATA_START and DATA_END (with C-style comment syntax). Replace everything
+    between those markers with the real data. Do not change anything else.
+    Every thumbnail must be an embedded base64 data URI so the file stays
+    100% self-contained.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Relatório de Nicho do YouTube</title>
+<style>
+  :root{
+    --bg:#0f0f12; --panel:#17171c; --panel-2:#1e1e25; --line:#2a2a33;
+    --text:#e9e9ef; --muted:#9a9aa8; --accent:#ff4d4d; --gold:#ffce4d;
+    --good:#3ddc84; --mid:#ffb84d; --low:#ff5c5c; --na:#6b6b78;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    background:var(--bg);color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.5;padding:32px 20px 64px;
+  }
+  .wrap{max-width:980px;margin:0 auto}
+  header{margin-bottom:32px}
+  h1{font-size:28px;font-weight:800;letter-spacing:-.5px}
+  h1 .kw{color:var(--accent)}
+  .gen{color:var(--muted);font-size:13px;margin-top:4px}
+  .stats{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px}
+  .stat{
+    background:var(--panel);border:1px solid var(--line);border-radius:12px;
+    padding:12px 16px;flex:1;min-width:160px;
+  }
+  .stat .label{color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.6px}
+  .stat .value{font-size:20px;font-weight:700;margin-top:2px}
+  section{margin-top:40px}
+  .sec-head{
+    display:flex;align-items:center;justify-content:space-between;
+    flex-wrap:wrap;gap:12px;margin-bottom:16px;
+  }
+  .sec-head h2{font-size:20px;font-weight:700}
+  .sort{display:flex;align-items:center;gap:8px}
+  .sort label{color:var(--muted);font-size:12px}
+  select{
+    background:var(--panel-2);color:var(--text);border:1px solid var(--line);
+    border-radius:8px;padding:7px 10px;font-size:13px;cursor:pointer;
+  }
+  .card{
+    display:flex;gap:16px;background:var(--panel);border:1px solid var(--line);
+    border-radius:14px;padding:14px;margin-bottom:12px;position:relative;
+  }
+  .card.top3{border-color:var(--gold)}
+  .rank{
+    position:absolute;top:-10px;left:-10px;width:30px;height:30px;border-radius:50%;
+    background:var(--panel-2);border:1px solid var(--line);color:var(--muted);
+    display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px;
+  }
+  .card.top3 .rank{background:var(--gold);color:#1a1a1a;border-color:var(--gold)}
+  .thumb-col{flex:0 0 240px;display:flex;flex-direction:column;gap:8px}
+  .thumb-col img{width:100%;border-radius:10px;display:block;background:#000;aspect-ratio:16/9;object-fit:cover}
+  .thumb-actions{display:flex;gap:8px}
+  .btn{
+    flex:1;background:var(--panel-2);color:var(--text);border:1px solid var(--line);
+    border-radius:8px;padding:7px 8px;font-size:12px;cursor:pointer;text-align:center;
+    text-decoration:none;transition:background .15s;
+  }
+  .btn:hover{background:#2c2c36}
+  .info{flex:1;min-width:0;display:flex;flex-direction:column}
+  .info .title{
+    font-size:15px;font-weight:700;color:var(--text);text-decoration:none;
+  }
+  .info .title:hover{color:var(--accent)}
+  .info .channel{color:var(--muted);font-size:13px;margin-top:4px}
+  .metrics{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:12px}
+  .pill{
+    background:var(--panel-2);border:1px solid var(--line);border-radius:999px;
+    padding:5px 11px;font-size:12px;font-weight:600;
+  }
+  .pill.perf-good{color:var(--good);border-color:#1f5a37}
+  .pill.perf-mid{color:var(--mid);border-color:#5a451f}
+  .pill.perf-low{color:var(--low);border-color:#5a2424}
+  .pill.perf-na{color:var(--na)}
+  footer{margin-top:48px;color:var(--muted);font-size:12px;text-align:center}
+  @media(max-width:640px){
+    .card{flex-direction:column}
+    .thumb-col{flex:0 0 auto}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Relatório de Nicho do YouTube — <span class="kw" id="kw"></span></h1>
+    <div class="gen" id="gen"></div>
+    <div class="stats" id="stats"></div>
+  </header>
+  <section id="sec-month"></section>
+  <section id="sec-week"></section>
+  <footer>
+    Gerado pelo agente de pesquisa de mercado do YouTube. A "média do canal" é
+    uma aproximação a partir de uma amostra de 12 vídeos, não uma métrica oficial
+    do YouTube.
+  </footer>
+</div>
+
+<script>
+/*__DATA_START__*/
+const DATA = {
+  "keyword": "example keyword",
+  "slug": "example-keyword",
+  "generatedDate": "2026-01-01",
+  "month": [
+    {
+      "title": "Example video title",
+      "channel": "Example Channel",
+      "channelHref": "https://www.youtube.com/@example",
+      "videoId": "dQw4w9WgXcQ",
+      "href": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "views": 1230000,
+      "whenText": "6 days ago",
+      "daysAgo": 6,
+      "performance": 2.3,
+      "channelAvg": 534000,
+      "thumb": "data:image/png;base64,REPLACE_WITH_BASE64"
+    }
+  ],
+  "week": []
+};
+/*__DATA_END__*/
+
+/* ----- rendering (do not edit) ----- */
+const fmt = n => Number(n||0).toLocaleString('pt-BR');
+
+function perfClass(p){
+  if(p==null) return 'perf-na';
+  if(p>1.5) return 'perf-good';
+  if(p>=1.0) return 'perf-mid';
+  return 'perf-low';
+}
+function perfText(p){
+  return p==null ? 'n/d' : p.toFixed(1).replace('.',',')+'× média do canal';
+}
+function daysText(d){
+  if(d==null) return '';
+  if(d===0) return 'Postado hoje';
+  return 'Postado há '+d+' dia'+(d===1?'':'s');
+}
+
+function cardHTML(v, rank){
+  const top3 = rank<=3 ? ' top3' : '';
+  return `
+  <div class="card${top3}" data-views="${v.views}" data-perf="${v.performance==null?-1:v.performance}">
+    <div class="rank">${rank}</div>
+    <div class="thumb-col">
+      <img src="${v.thumb}" alt="thumbnail">
+      <div class="thumb-actions">
+        <a class="btn" download="${DATA.slug}-${rank}.png" href="${v.thumb}">⬇ Miniatura</a>
+        <button class="btn copy" data-link="https://www.youtube.com/watch?v=${v.videoId}">🔗 Copiar link</button>
+      </div>
+    </div>
+    <div class="info">
+      <a class="title" href="${v.href}" target="_blank" rel="noopener">${v.title}</a>
+      <div class="channel">${v.channel}</div>
+      <div class="metrics">
+        <span class="pill">${fmt(v.views)} visualizações</span>
+        <span class="pill">${daysText(v.daysAgo)}</span>
+        <span class="pill ${perfClass(v.performance)}">${perfText(v.performance)}</span>
+      </div>
+    </div>
+  </div>`;
+}
+
+function sortVideos(list, mode){
+  const arr = list.slice();
+  if(mode==='perf'){
+    arr.sort((a,b)=>{
+      const pa = a.performance==null?-Infinity:a.performance;
+      const pb = b.performance==null?-Infinity:b.performance;
+      return pb-pa;
+    });
+  }else{
+    arr.sort((a,b)=>b.views-a.views);
+  }
+  return arr;
+}
+
+function renderSection(elId, title, list, defaultMode){
+  const el = document.getElementById(elId);
+  el.innerHTML = `
+    <div class="sec-head">
+      <h2>${title}</h2>
+      <div class="sort">
+        <label>Ordenar por</label>
+        <select>
+          <option value="views">Mais vistos</option>
+          <option value="perf">Melhor desempenho (views ÷ média do canal)</option>
+        </select>
+      </div>
+    </div>
+    <div class="cards"></div>`;
+  const cards = el.querySelector('.cards');
+  const sel = el.querySelector('select');
+  function draw(mode){
+    const sorted = sortVideos(list, mode);
+    cards.innerHTML = sorted.map((v,i)=>cardHTML(v,i+1)).join('');
+  }
+  sel.value = defaultMode;
+  sel.addEventListener('change', ()=>draw(sel.value));
+  draw(defaultMode);
+}
+
+function topChannel(all){
+  const tally = {};
+  all.forEach(v=>{ tally[v.channel] = (tally[v.channel]||0) + v.views; });
+  let best='—', max=-1;
+  for(const c in tally){ if(tally[c]>max){ max=tally[c]; best=c; } }
+  return best;
+}
+
+function init(){
+  document.getElementById('kw').textContent = DATA.keyword;
+  document.getElementById('gen').textContent = 'Gerado em '+DATA.generatedDate;
+  const all = (DATA.month||[]).concat(DATA.week||[]);
+  const combined = all.reduce((s,v)=>s+(v.views||0),0);
+  document.getElementById('stats').innerHTML = `
+    <div class="stat"><div class="label">Vídeos analisados</div><div class="value">${all.length}</div></div>
+    <div class="stat"><div class="label">Visualizações combinadas</div><div class="value">${fmt(combined)}</div></div>
+    <div class="stat"><div class="label">Canal destaque</div><div class="value">${topChannel(all)}</div></div>`;
+  renderSection('sec-month','📅 Top 30 — Este Mês', DATA.month||[], 'views');
+  renderSection('sec-week','🔥 Top 15 — Esta Semana', DATA.week||[], 'views');
+
+  document.body.addEventListener('click', e=>{
+    const btn = e.target.closest('.copy');
+    if(!btn) return;
+    navigator.clipboard.writeText(btn.dataset.link).then(()=>{
+      const orig = btn.textContent;
+      btn.textContent = '✓ Copied!';
+      setTimeout(()=>{ btn.textContent = orig; }, 1200);
+    });
+  });
+}
+init();
+</script>
+</body>
+</html>

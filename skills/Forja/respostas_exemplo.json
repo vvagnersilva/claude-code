@@ -1,0 +1,16 @@
+{
+  "nome": "Studio Clara",
+  "profissao": "dona de barbearia / barbeiro ha 8 anos",
+  "forcas": [
+    "atendimento e relacionamento com cliente",
+    "organizacao da agenda e do time",
+    "ja uso Claude no dia a dia"
+  ],
+  "ferramentas": ["Claude", "ChatGPT", "WhatsApp"],
+  "clientes_possiveis": "outras barbearias e saloes pequenos da minha cidade",
+  "cor": "#7c3aed",
+  "logo": "",
+  "tom": "proximo, simples e descontraido",
+  "moeda": "BRL",
+  "canais": ["WhatsApp", "Instagram", "rede de contatos de donos de barbearia"]
+}

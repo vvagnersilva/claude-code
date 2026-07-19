@@ -1,0 +1,24 @@
+{
+  "brand": "AURUM & NOIR",
+  "niche": "luxury-product",
+  "tagline": "Crafted in Darkness",
+  "subtitle": "The Eclipse tourbillon chronograph.",
+  "subject": "faceted-solid",
+  "vibe": { "accent": "#c8a84b", "background": "#0a0a0a", "text": "#f2ede1" },
+  "hud": null,
+  "sections": [
+    { "id": "hero",    "kicker": "AURUM & NOIR", "title": "The Eclipse", "body": "A tourbillon caged in brushed black titanium." },
+    { "id": "story",   "kicker": "CRAFTED IN DARKNESS", "title": "Six years. One movement.", "body": "Assembled by hand in a room without daylight." },
+    { "id": "macro",   "kicker": "THE DIAL", "title": "Light rippling across brushed metal.", "body": "Engraved indices. A tourbillon cage that never rests." },
+    { "id": "engineering", "kicker": "ENGINEERING", "title": "217 components, converging.", "body": "42mm grade-5 titanium. 72-hour reserve." },
+    { "id": "edition", "kicker": "EDITION OF 88", "title": "$48,000", "body": "Each numbered. None repeated." }
+  ],
+  "specs": [
+    ["CASE", "42mm grade-5 titanium"],
+    ["RESERVE", "72 hours"],
+    ["COMPONENTS", "217"],
+    ["EDITION", "88 pieces"]
+  ],
+  "cta": { "headline": "Edition of 88 — $48,000", "button": "Request the Waitlist" },
+  "generation": { "provider": "higgsfield", "model": "seedance-2.0", "mode": "std", "resolution": "1080p", "chained": false }
+}

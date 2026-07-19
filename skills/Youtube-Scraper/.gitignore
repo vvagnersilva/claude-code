@@ -1,0 +1,24 @@
+# Generated reports (keep the folder, ignore the output)
+reports/*.html
+youtube-report-*.html
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.swp
+
+# Node
+node_modules/
+package-lock.json
+
+# Setup skill state file (machine-specific, transient)
+.youtube-setup-state.json
+
+# Local Claude Code overrides
+.claude/settings.local.json
+
+# Playwright MCP session artifacts (snapshots, console logs, screenshots)
+.playwright-mcp/
+
+# Temporary data file used by inject-data.js
+report-data.json

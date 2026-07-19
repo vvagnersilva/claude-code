@@ -1,0 +1,14 @@
+# Secrets — never commit. The stack inside stack/ has its own .gitignore too.
+**/wrangler.toml
+**/.dev.vars
+**/.env
+**/.env.*
+.DS_Store
+
+# Node
+node_modules/
+
+# Playwright MCP transient artifacts (screenshots, traces) if any land here
+playwright-report/
+test-results/
+*.har

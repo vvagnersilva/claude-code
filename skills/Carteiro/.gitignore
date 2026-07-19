@@ -1,0 +1,4 @@
+# Dados locais do Carteiro (privados — nunca versionar)
+.carteiro/
+__pycache__/
+*.pyc

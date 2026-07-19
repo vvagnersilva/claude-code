@@ -1,0 +1,108 @@
+# VOLTA — carro elétrico circular · nicho automotive (arquétipo DESCENT, ENCADEADO)
+# Narrativa: o carro se decompõe em 847 peças, as peças viram OUTRAS COISAS
+# (turbina, cidade) e, no fim do scroll, voltam a ser o carro. "Tudo volta."
+# HUD não-monotônico (PEÇAS 1 → 847 → 1) — usa a interpolação por waypoints.
+# Copy em pt-BR; prompts de geração em inglês (linguagem dos modelos).
+brand: VOLTA
+niche: automotive
+tagline: Tudo volta.
+subtitle: O elétrico feito de 847 peças que já foram — e voltarão a ser — outras coisas.
+
+lang: pt-BR
+ui:
+  scroll: role ↓
+  specification: Especificações
+
+vibe:
+  mood: circular, elemental, precise
+  accent: "#4fe0c8"          # teal elétrico sobre grafite
+  background: "#07090b"
+  text: "#e8f2ef"
+
+subject: hypercar
+style: cinematic-macro-noir
+
+hud:
+  label: PEÇAS
+  unit: ""
+  from: 1
+  to: 847
+
+sections:
+  - id: hero
+    zone: O CARRO
+    hudValue: 1
+    fog: "#101418"
+    kicker: VOLTA · UM
+    title: Tudo volta.
+    body: Um carro elétrico. Oitocentas e quarenta e sete peças. Nenhuma delas nasceu aqui.
+  - id: decomposicao
+    zone: A DECOMPOSIÇÃO
+    hudValue: 847
+    fog: "#0c1216"
+    carry: final-frame→start-frame
+    kicker: 847 PEÇAS
+    title: Ele se desfaz no ar.
+    body: Motores, células, vidro e alumínio flutuam em órbita — cada peça com sua própria história.
+  - id: turbina
+    zone: A TURBINA
+    hudValue: 128
+    fog: "#0a1a1a"
+    carry: final-frame→start-frame
+    kicker: PRIMEIRA VIDA
+    title: As peças lembram do vento.
+    body: O alumínio já foi pá de turbina. As peças se fundem e giram outra vez.
+  - id: cidade
+    zone: A CIDADE
+    hudValue: 16
+    fog: "#081014"
+    carry: final-frame→start-frame
+    kicker: SEGUNDA VIDA
+    title: Viram luz na cidade.
+    body: A energia escorre das pás para dezesseis quarteirões acesos na madrugada.
+  - id: avolta
+    zone: A VOLTA
+    hudValue: 1
+    fog: "#05070a"
+    carry: final-frame→start-frame
+    kicker: VOLTA · UM
+    title: E voltam a ser carro.
+    body: A cidade recolhe as luzes. As peças atravessam o escuro e se encaixam. Um, de novo.
+
+specs:
+  - ["MOTORES", "4 · independentes"]
+  - ["BATERIA", "120 kWh · 96% reciclável"]
+  - ["PEÇAS", "847 · todas rastreáveis"]
+  - ["AUTONOMIA", "780 km"]
+cta:
+  headline: A primeira volta é sua. Série inaugural de 500 unidades.
+  button: Reservar a Minha
+
+heroImage: a sleek electric car, matte graphite body with one thin teal light-bar face, floating in a black void, warm rim light on its silhouette
+visuals:
+  - id: carro
+    kind: chain
+    prompt: the matte graphite electric car at rest in a dark studio void, teal light-bar igniting, slow cinematic push-in, ending on a still wide frame
+  - id: decomposicao
+    kind: chain
+    prompt: the car gently separates into hundreds of floating components in slow motion, motors, battery cells, glass and panels drifting apart into a suspended exploded orbit
+  - id: turbina
+    kind: chain
+    prompt: the floating components swirl together and fuse into a tall wind turbine, blades assembling from aluminum panels and beginning to rotate slowly in the dark
+  - id: cidade
+    kind: chain
+    prompt: the turbine dissolves into a miniature night city grid seen from above, streets and windows pulsing with flowing light
+  - id: avolta
+    kind: chain
+    prompt: the city lights lift off and converge in the dark, streaming together and reassembling into the electric car, holding on a final still hero frame
+
+generation:
+  model: seedance-2.0
+  mode: std
+  # BARRA DE QUALIDADE (obrigatória no repo): 1080p — o decode preserva até
+  # 1920px (frameMaxWidth) e o VERIFY exige frames ≥1280px. Os assets atuais
+  # em output/volta foram gerados a 720p num corte de custo; o resume NÃO os
+  # reusa mais para 1080p (resolução faz parte da chave de reuso) — regenerar
+  # custa ~US$ 28 quando houver saldo.
+  resolution: 1080p
+  chained: true

@@ -1,0 +1,6 @@
+# Preferências e dados locais do usuário — nunca versionar
+.escriba/
+*.ocr.txt
+*.limpo.xlsx
+*.tabelas.xlsx
+__pycache__/

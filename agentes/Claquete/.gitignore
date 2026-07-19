@@ -1,0 +1,5 @@
+# Configuração e dados locais do canal (gerados no setup) — nunca versionar
+.claquete/
+
+# Sistema
+.DS_Store

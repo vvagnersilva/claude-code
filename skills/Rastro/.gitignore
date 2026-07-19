@@ -1,0 +1,6 @@
+# Dados locais do Rastro (config + diário de bugs) — ficam na raiz do projeto do membro.
+# Esta entrada cobre o caso de a skill ser versionada; o diário real do membro vive em
+# .rastro/ na raiz do projeto dele e é ignorado pelo .gitignore da raiz (o setup cuida disso).
+.rastro/
+__pycache__/
+*.pyc

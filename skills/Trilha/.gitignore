@@ -1,0 +1,6 @@
+# Dados locais do usuário — nunca versionar
+.trilha/
+
+# Python
+__pycache__/
+*.pyc

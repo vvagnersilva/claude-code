@@ -1,0 +1,17 @@
+{
+  "negocio": "Clinica Sorria Mais",
+  "nicho": "odontologia estetica - clareamento e lentes de contato dental",
+  "publico": "mulheres de 28 a 45 anos que querem um sorriso mais bonito mas tem medo de dentista e de preco",
+  "tom": "acolhedor, leve e confiante - explica sem assustar, zero jargao tecnico",
+  "pilares": ["Educar", "Bastidores e rotina", "Prova social (antes/depois e depoimentos)", "Oferta e agenda"],
+  "plataformas": ["Instagram", "WhatsApp Status"],
+  "frequencia_semanal": 3,
+  "assinatura": "@clinicasorriamais",
+  "cta_padrao": "Manda um oi no direct que a gente te explica tudo sem compromisso.",
+  "nao_falar": ["promessa de resultado garantido", "preco fixo sem avaliacao", "termos tecnicos sem traducao"],
+  "ideias_iniciais": [
+    {"tipo": "ideia", "texto": "Mito x verdade: clareamento estraga o dente?", "pilar": "Educar"},
+    {"tipo": "gancho", "texto": "Ninguem te conta isso antes de fazer lente de contato dental...", "pilar": "Educar"},
+    {"tipo": "tema", "texto": "Bastidores de um dia de atendimento na clinica", "pilar": "Bastidores e rotina"}
+  ]
+}

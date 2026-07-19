@@ -1,0 +1,80 @@
+# THOCK — artisan mechanical keyboard · niche ecommerce (REVEAL archetype)
+# Viral angle: the keyboard community lives for macro switch shots + sound culture.
+brand: THOCK
+niche: ecommerce
+tagline: You will hear it before you see it.
+subtitle: A gasket-mounted 65% board machined from aluminum, tuned like an instrument.
+
+vibe:
+  mood: tactile, obsessive, satisfying
+  accent: "#9a7ce0"          # electric lilac on gunmetal
+  background: "#0a0a0e"
+  text: "#eeeaf6"
+
+subject: faceted-solid
+style: cinematic-macro-noir
+
+hud:
+  label: KEYSTROKES RATED
+  unit: "M"
+  from: 0
+  to: 80
+
+sections:
+  - id: hero
+    zone: THE BOARD
+    hudValue: 0
+    kicker: THOCK · 65%
+    title: You will hear it before you see it.
+    body: 2.1 kilograms of aluminum, tuned to one frequency — thock.
+  - id: switch
+    zone: THE SWITCH
+    hudValue: 20
+    kicker: 63.5 G · LINEAR
+    title: A piston in free fall.
+    body: Hand-lubed stems gliding on polished rails. No wobble. No noise floor.
+  - id: spring
+    zone: THE SPRING
+    hudValue: 40
+    kicker: DOUBLE-STAGE
+    title: The spring remembers nothing.
+    body: Cryo-treated steel that returns identical, stroke after stroke.
+  - id: keycap
+    zone: THE KEYCAP
+    hudValue: 60
+    kicker: TRIPLE-SHOT PBT
+    title: Legends that never fade.
+    body: 1.6 mm walls. A profile sculpted for fingertips, not spec sheets.
+  - id: sound
+    zone: THE SOUND
+    hudValue: 80
+    kicker: THE SOUND TEST
+    title: One key. One note.
+    body: Gasket mount, foam-tuned case, and the deepest thock on the timeline.
+
+specs:
+  - ["CASE", "6063 aluminum · 2.1 kg"]
+  - ["MOUNT", "gasket · PORON tuned"]
+  - ["SWITCHES", "63.5 g hand-lubed linear"]
+  - ["LIFESPAN", "80M keystrokes"]
+cta:
+  headline: Group buy closes Sunday. Never rerun.
+  button: Join the Group Buy
+
+heroImage: a gunmetal aluminum 65% mechanical keyboard floating in a black void, sculpted keycaps catching warm light, one keycap removed exposing a lilac switch
+visuals:
+  - id: hero
+    kind: orbit
+    prompt: slow 360° turntable of the aluminum keyboard floating in darkness, warm light sweeping across sculpted keycaps
+  - id: switch
+    kind: macro
+    prompt: extreme macro cutaway of a mechanical switch actuating in slow motion, stem sliding, spring compressing, lilac housing glowing softly
+  - id: rain
+    kind: assembly
+    prompt: keycaps and switches raining down in slow motion and assembling themselves into the finished keyboard
+
+generation:
+  model: seedance-2.0
+  mode: std
+  resolution: 1080p
+  chained: false

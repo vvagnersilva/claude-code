@@ -1,0 +1,95 @@
+# EIDOLON — electric hypercar · niche automotive (DESCENT archetype, CHAINED)
+# Viral angle: 0→412 km/h speedometer bound to scroll; night-tunnel launch.
+brand: EIDOLON
+niche: automotive
+tagline: Silence at 412.
+subtitle: A 1,900-horsepower electric hypercar that never raises its voice.
+
+vibe:
+  mood: menacing, clinical, fast
+  accent: "#e0483c"          # crimson light-bar against obsidian
+  background: "#08080a"
+  text: "#eceff4"
+
+subject: hypercar
+style: cinematic-macro-noir
+
+hud:
+  label: SPEED
+  unit: " km/h"
+  from: 0
+  to: 412
+
+sections:
+  - id: hero
+    zone: STANDSTILL
+    depth: 0
+    fog: "#141018"
+    kicker: EIDOLON
+    title: Silence at 412.
+    body: Matte obsidian. One unbroken light-bar. Zero decibels of apology.
+  - id: launch
+    zone: THE LAUNCH
+    depth: 100
+    fog: "#100c14"
+    carry: final-frame→start-frame
+    kicker: 0–100 · 1.8 s
+    title: The road lets go first.
+    body: Four motors bite at once. Your spine arrives a half-second late.
+  - id: tunnel
+    zone: THE TUNNEL
+    depth: 250
+    fog: "#0b0910"
+    carry: final-frame→start-frame
+    kicker: 250 KM/H
+    title: Light becomes a liquid.
+    body: Sodium lamps stretch into a single amber ribbon overhead.
+  - id: apex
+    zone: THE APEX
+    depth: 350
+    fog: "#07060b"
+    carry: final-frame→start-frame
+    kicker: 350 KM/H · 1.2 G
+    title: The corner bends around you.
+    body: Active aero leans the car into a curve it already memorized.
+  - id: vmax
+    zone: V-MAX
+    depth: 412
+    fog: "#040407"
+    carry: final-frame→start-frame
+    kicker: 412 KM/H
+    title: And still, silence.
+    body: Only wind, tearing politely at the mirrors.
+
+specs:
+  - ["POWER", "1,900 hp · 4 motors"]
+  - ["0–100", "1.8 s"]
+  - ["TOP SPEED", "412 km/h"]
+  - ["PRODUCTION", "99 units"]
+cta:
+  headline: 99 units. Allocation by invitation.
+  button: Request Allocation
+
+heroImage: a matte obsidian electric hypercar, low and wide with a single thin crimson light-bar face, parked in a black void with warm rim light
+visuals:
+  - id: standstill
+    kind: chain
+    prompt: the matte black hypercar at rest in a dark hangar, a thin crimson light-bar igniting across its face, dust hanging in one warm beam
+  - id: launch
+    kind: chain
+    prompt: brutal standing start, the car snapping forward, tarmac texture streaking, heat shimmer off the asphalt
+  - id: tunnel
+    kind: chain
+    prompt: inside a sodium-lit tunnel at extreme speed, amber lights stretching into ribbons over the black bodywork
+  - id: apex
+    kind: chain
+    prompt: the car carving a long night corner, active rear wing tilting, crimson light trail bending with the road
+  - id: vmax
+    kind: chain
+    prompt: top speed on an empty midnight straight, the car centered and still while the world blurs, holding a final hero frame
+
+generation:
+  model: seedance-2.0
+  mode: std
+  resolution: 1080p
+  chained: true

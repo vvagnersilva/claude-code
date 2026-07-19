@@ -1,0 +1,8 @@
+# Configuração privada do negócio (gerada no setup) — nunca versionar
+.orquestra/
+
+# Planos e estado de trabalho
+.orquestra/plano.md
+
+# Sistema
+.DS_Store

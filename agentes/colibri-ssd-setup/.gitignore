@@ -1,0 +1,9 @@
+# Local overrides (copy config.env -> config.local.env to override without touching git)
+config.local.env
+
+# macOS cruft
+.DS_Store
+
+# Scratch / logs produced by the scripts when run locally
+*.log
+.coli_speedtest

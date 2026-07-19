@@ -1,0 +1,80 @@
+# KAJI — Japanese damascus chef knife · niche luxury-product (ORBIT archetype)
+# Viral angle: "67 layers of folded steel" — satisfying macro + craft numbers.
+brand: KAJI
+niche: luxury-product
+tagline: Sixty-seven layers deep.
+subtitle: A hand-forged damascus gyuto, folded in fire, finished in silence.
+
+vibe:
+  mood: reverent, precise, elemental
+  accent: "#bfd3e6"          # cold steel glint against the warm key light
+  background: "#0a0908"
+  text: "#f0ece4"
+
+subject: faceted-solid
+style: cinematic-macro-noir
+
+hud:
+  label: LAYERS
+  unit: ""
+  from: 0
+  to: 67
+
+sections:
+  - id: hero
+    zone: THE BLADE
+    hudValue: 0
+    kicker: KAJI · 鍛冶
+    title: Sixty-seven layers deep.
+    body: One billet. One fire. One blade that outlives its maker.
+  - id: ore
+    zone: THE ORE
+    hudValue: 8
+    kicker: TAMAHAGANE
+    title: It begins as sand.
+    body: Iron sand smelted for seventy-two hours into steel with a soul.
+  - id: fold
+    zone: THE FOLD
+    hudValue: 33
+    kicker: ORIKAESHI
+    title: Folded until the grain sings.
+    body: Each fold doubles the layers. Each layer remembers the hammer.
+  - id: edge
+    zone: THE EDGE
+    hudValue: 60
+    kicker: HAZUYA POLISH
+    title: Sharpened to a whisper.
+    body: A micro-bevel measured in microns, polished with river stones.
+  - id: table
+    zone: THE TABLE
+    hudValue: 67
+    kicker: FIRST CUT
+    title: The blade meets the board.
+    body: Sixty-seven layers, one clean fall through a ripe tomato.
+
+specs:
+  - ["STEEL", "VG-10 damascus core"]
+  - ["LAYERS", "67 hand-folded"]
+  - ["EDGE", "15° · single micron bevel"]
+  - ["FORGED", "Sakai, Osaka"]
+cta:
+  headline: 40 blades a year. Numbered. Never restocked.
+  button: Reserve a Blade
+
+heroImage: a hand-forged damascus gyuto chef knife floating in a black void, folded-steel wave pattern rippling along the blade, warm light tracing the edge
+visuals:
+  - id: hero
+    kind: orbit
+    prompt: slow perfectly smooth 360° turntable of a damascus chef knife floating in a black void, light rippling across the folded-steel pattern
+  - id: macro
+    kind: macro
+    prompt: extreme close-up glide along the damascus blade, layered steel grain like wood rings, the edge catching a razor line of light
+  - id: forge
+    kind: assembly
+    prompt: the knife assembling itself from floating glowing billets and ember sparks converging into the finished blade
+
+generation:
+  model: seedance-2.0
+  mode: std
+  resolution: 1080p
+  chained: false

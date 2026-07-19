@@ -1,0 +1,26 @@
+{
+  "negocio": "Barbearia Exemplo",
+  "tipo": "barbearia",
+  "profissionais": ["Joao", "Pedro"],
+  "servicos": [
+    {"nome": "Corte", "duracao_min": 30, "preco": 50, "retorno_dias": 21},
+    {"nome": "Corte + Barba", "duracao_min": 60, "preco": 80, "retorno_dias": 21},
+    {"nome": "Barba", "duracao_min": 30, "preco": 40, "retorno_dias": 21}
+  ],
+  "horario": {
+    "seg": [],
+    "ter": ["09:00-19:00"],
+    "qua": ["09:00-19:00"],
+    "qui": ["09:00-19:00"],
+    "sex": ["09:00-19:00"],
+    "sab": ["09:00-17:00"],
+    "dom": []
+  },
+  "intervalo": "12:00-13:00",
+  "granularidade_min": 30,
+  "canal": "WhatsApp",
+  "tom": "descontraido e proximo, com um emoji aqui e ali",
+  "assinatura": "Equipe Barbearia Exemplo",
+  "antecedencia_remarcacao_horas": 12,
+  "lembrete_dias": [2, 1]
+}

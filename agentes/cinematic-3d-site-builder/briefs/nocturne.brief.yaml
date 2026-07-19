@@ -1,0 +1,102 @@
+# NOCTURNE — extrait de parfum · nicho journey (arquétipo DESCENT, ENCADEADO)
+# Ângulo viral: "uma descida pelas notas" — 12 horas na pele como jornada de scroll.
+# Validação-carro-chefe da continuidade: frame-final → frame-inicial.
+# Copy em pt-BR; prompts de geração permanecem em inglês (linguagem dos modelos).
+brand: NOCTURNE
+niche: journey
+tagline: Doze horas no escuro.
+subtitle: Um extrait de parfum que se revela da bergamota ao oud em brasas.
+
+lang: pt-BR
+ui:
+  scroll: role ↓
+  specification: Especificações
+
+vibe:
+  mood: intimate, slow, hypnotic
+  accent: "#d4a24e"          # âmbar líquido dourado
+  background: "#0c0710"
+  text: "#efe6f2"
+
+subject: faceted-solid
+style: cinematic-macro-noir
+
+hud:
+  label: NA PELE
+  unit: h
+  from: 0
+  to: 12
+
+sections:
+  - id: hero
+    zone: PRIMEIRO SPRAY
+    depth: 0
+    fog: "#241430"
+    kicker: NOCTURNE · EXTRAIT
+    title: Doze horas no escuro.
+    body: Um frasco. Trinta e uma matérias-primas. Um perfume que conta o tempo.
+  - id: opening
+    zone: A ABERTURA
+    depth: 1
+    fog: "#1c1028"
+    carry: final-frame→start-frame
+    kicker: HORA 1 · BERGAMOTA
+    title: Abre frio e luminoso.
+    body: Bergamota da Calábria e pimenta rosa faíscam como pederneira.
+  - id: heart
+    zone: O CORAÇÃO
+    depth: 4
+    fog: "#150b20"
+    carry: final-frame→start-frame
+    kicker: HORA 4 · ÍRIS & FUMAÇA
+    title: O coração é veludo e cinza.
+    body: Manteiga de íris se dobra em fumaça de papiro. O perfume desacelera a respiração.
+  - id: base
+    zone: O FUNDO
+    depth: 8
+    fog: "#0e0715"
+    carry: final-frame→start-frame
+    kicker: HORA 8 · OUD
+    title: O fundo é madeira em brasas.
+    body: Oud do Laos e ládano ardem como carvões sob a pele.
+  - id: drydown
+    zone: O RASTRO
+    depth: 12
+    fog: "#07040b"
+    carry: final-frame→start-frame
+    kicker: HORA 12 · O QUE FICA
+    title: O que fica é só seu.
+    body: Almíscar e âmbar quente, uma assinatura que só a pele mais próxima consegue ler.
+
+specs:
+  - ["CONCENTRAÇÃO", "extrait · 32%"]
+  - ["MATÉRIAS-PRIMAS", "31"]
+  - ["LONGEVIDADE", "12+ horas"]
+  - ["LOTE", "300 frascos"]
+cta:
+  headline: O Lote 03 abre à meia-noite. 300 frascos.
+  button: Entrar na Lista
+
+heroImage: a faceted black glass perfume flacon with liquid amber inside, floating in a dark void, caustic light refracting through the glass
+visuals:
+  - id: spray
+    kind: chain
+    prompt: macro of a perfume atomizer firing once in slow motion, a galaxy of micro-droplets blooming and hanging in dark air
+  - id: opening
+    kind: chain
+    prompt: the droplet cloud ignites into bright citrus-gold vapor ribbons swirling upward through the darkness
+  - id: heart
+    kind: chain
+    prompt: the vapor slows and thickens into violet-grey silk and curling papyrus smoke drifting past the flacon
+  - id: base
+    kind: chain
+    prompt: the smoke settles onto embered oud wood, veins of glowing amber pulsing inside dark resin
+  - id: drydown
+    kind: chain
+    prompt: the embers dim to a single warm glow on the flacon's facet, holding on a final hero frame in the dark
+
+generation:
+  model: seedance-2.0
+  mode: std
+  resolution: 1080p
+  chained: true

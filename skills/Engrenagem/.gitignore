@@ -1,0 +1,6 @@
+# Dados locais do usuario — nunca versionar
+.engrenagem/
+
+# Python
+__pycache__/
+*.pyc

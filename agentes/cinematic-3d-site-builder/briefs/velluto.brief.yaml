@@ -1,0 +1,80 @@
+# VELLUTO — manual espresso machine · niche saas (ASSEMBLE archetype)
+# Viral angle: exploded-view machine assembling itself + 9-bar pressure counter.
+brand: VELLUTO
+niche: saas
+tagline: Nine bars of patience.
+subtitle: A hand-built lever espresso machine, machined from a single brass block.
+
+vibe:
+  mood: warm, mechanical, indulgent
+  accent: "#c8853f"          # crema amber
+  background: "#0b0805"
+  text: "#f3ead9"
+
+subject: tower
+style: cinematic-macro-noir
+
+hud:
+  label: PRESSURE
+  unit: " bar"
+  from: 0
+  to: 9
+
+sections:
+  - id: hero
+    zone: THE MACHINE
+    hudValue: 0
+    kicker: VELLUTO
+    title: Nine bars of patience.
+    body: Two hundred and eleven machined parts. Zero electronics.
+  - id: grind
+    zone: THE GRIND
+    hudValue: 2
+    kicker: 250 MICRONS
+    title: Ground to a breath of powder.
+    body: Burrs turn slowly so the oils never scorch.
+  - id: tamp
+    zone: THE TAMP
+    hudValue: 4
+    kicker: 15 KG · LEVEL
+    title: Pressed into a perfect puck.
+    body: A calibrated tamp, flat to a hundredth of a millimetre.
+  - id: extraction
+    zone: THE EXTRACTION
+    hudValue: 8
+    kicker: 92°C · 27 SECONDS
+    title: The lever comes down.
+    body: Brass, spring and hand pressure. Nothing else touches the shot.
+  - id: crema
+    zone: THE CREMA
+    hudValue: 9
+    kicker: FIRST POUR
+    title: Velvet, poured slow.
+    body: Tiger-striped crema settling like silk under warm light.
+
+specs:
+  - ["BODY", "single brass billet"]
+  - ["PARTS", "211 machined"]
+  - ["PRESSURE", "9 bar · lever"]
+  - ["ELECTRONICS", "none"]
+cta:
+  headline: Built to order. Eight weeks. A lifetime.
+  button: Commission Yours
+
+heroImage: a polished brass lever espresso machine floating in a black void, warm light on machined curves, a thread of espresso frozen mid-pour
+visuals:
+  - id: exploded
+    kind: assembly
+    prompt: two hundred machined brass and steel espresso-machine parts floating apart in dark space, then converging and assembling into the finished lever machine
+  - id: macro
+    kind: macro
+    prompt: extreme close-up of coffee grounds falling in slow motion into a portafilter, each particle sharp and catching the light
+  - id: pour
+    kind: macro
+    prompt: slow-motion macro of tiger-striped espresso pouring into a glass, golden crema folding into itself
+
+generation:
+  model: seedance-2.0
+  mode: std
+  resolution: 1080p
+  chained: false
